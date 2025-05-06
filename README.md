@@ -72,9 +72,18 @@ aws eks update-kubeconfig --name eks-cluster-204 --region us-east-1
 ## Get EKS Pod data.
 kubectl get pods --all-namespaces
 
+# How to insert into a pod (the pod must be running)
+kubectl exec -it "podname" -- sh
 
 # Final output of 2048 game deployment
 ![Image](https://github.com/user-attachments/assets/39d19758-a5b0-4cb8-b4cb-57d1b5190b4f)
 
+# Process of cleaning up
+kubectl delete svc mygame-svc
+kubectl delete pods
+
 ## Delete EKS cluster
 eksctl delete cluster --name eks-cluster-204 --region us-east-1
+
+# Final output of cleaning up
+![Image](https://github.com/user-attachments/assets/33232107-47b6-480a-b83a-2e4f8727a423)
